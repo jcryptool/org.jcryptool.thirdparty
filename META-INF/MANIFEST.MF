@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Java11migration
+Bundle-SymbolicName: org.jcryptool.thirdparty.java11migration
+Bundle-Version: 0.0.1.qualifier
+Automatic-Module-Name: org.jcryptool.thirdparty.java11migration
+Bundle-RequiredExecutionEnvironment: JavaSE-11
