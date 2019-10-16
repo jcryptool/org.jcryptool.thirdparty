@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.jcryptool.thirdparty.jre.linux64.feature">
+      <category name="jct_jre"/>
+   </feature>
+   <feature id="org.jcryptool.thirdparty.jre.macosx.feature">
+      <category name="jct_jre"/>
+   </feature>
+   <feature id="org.jcryptool.thirdparty.jre.win64.feature">
+      <category name="jct_jre"/>
+   </feature>
+   <category-def name="jct_jre" label="Java Runtime Environment for JCrypTool"/>
+</site>

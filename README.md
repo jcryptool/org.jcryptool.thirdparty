@@ -8,7 +8,7 @@ This project is for packaging third-party libraries. However, these dependencies
 
 This project serves the [JCrypTool (JCT) project](https://github.com/jcryptool/core). JCT is an Eclipse Rich Client Platform application. It requires Java artifacts (JARs) to be provided as OSGi bundles. Often, these can be found on the [Eclipse Orbit](https://www.eclipse.org/orbit/) update sites. However, some times this is not enough. Examples for which this project was initially conceived are:
 
-- [Migration from Java 8 to Java 11](bundles/org.jcryptool.thirdparty.java11migration.jaxb/README-why.md): We missed javax.xml functionality which was removed from the JDK between those versions. The Orbit bundles were outdated (javax.xml 2.2), however, we required an API from 2.3 upward.
+- [Migration from Java 8 to Java 11](bundles/org.jcryptool.thirdparty.m2bundle.jaxb/README-why.md): We missed javax.xml functionality which was removed from the JDK between those versions. The Orbit bundles were outdated (javax.xml 2.2), however, we required an API from 2.3 upward.
 - Bugfixes of Eclipse platform libraries (as incubation before they ideally end up upstream and we don't need them anymore)
 
 To that end, two solutions are possible: 

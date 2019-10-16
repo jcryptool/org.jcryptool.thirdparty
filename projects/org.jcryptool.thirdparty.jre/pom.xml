@@ -1,0 +1,18 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>org.jcryptool.thirdparty.jre</artifactId>
+    <packaging>pom</packaging>
+	<parent>
+		<groupId>org.jcryptool.thirdparty</groupId>
+		<artifactId>org.jcryptool.thirdparty.root</artifactId>
+		<relativePath>./../../</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+    <modules>
+        <module>org.jcryptool.thirdparty.jre.macosx.feature</module>
+        <module>org.jcryptool.thirdparty.jre.win64.feature</module>
+        <module>org.jcryptool.thirdparty.jre.linux64.feature</module>
+    </modules>
+</project>

@@ -12,7 +12,7 @@
  </parent>
 
   <modules>
-    <module>bundles</module>
+    <module>projects</module>
     <module>releng</module>
   </modules>
 </project>

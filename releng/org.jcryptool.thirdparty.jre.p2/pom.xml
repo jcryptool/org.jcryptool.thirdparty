@@ -1,0 +1,16 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.jcryptool.thirdparty</groupId>
+		<artifactId>org.jcryptool.thirdparty.releng</artifactId>
+		<relativePath>./../</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>org.jcryptool.thirdparty.jre.p2</artifactId>
+	<packaging>eclipse-repository</packaging>
+
+	<build>
+        <plugins>
+		</plugins>
+	</build>
+</project>
