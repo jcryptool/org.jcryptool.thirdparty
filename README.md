@@ -40,6 +40,13 @@ For 2), many ways seem possible with what the Eclipse PDE with its Maven project
 
 In the linked analysis articles, a solution emerges via multiple Maven plugins. As a result, this project implements this approach in what I think is the best, most sane and principled way to go about it.
 
+## How to add more Maven Central `<dependencies>`
+
+- the JAXB bundle shows how dependencies are defined: https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/projects/org.jcryptool.thirdparty.m2bundle.jaxb/pom.xml#L21-L34
+- **Either** we add a "misc. dependencies" project like the JAXB project (without a specific topic; where such ) where we can just put another set of these `<dependency>` tags
+- **Or**, clone the JAXB project, adapt the artifact id, add it as `<module>` in https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/projects/pom.xml, and add it as a dependency here: https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/releng/org.jcryptool.thirdparty.m2bundle.p2/pom.xml as such: https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/releng/org.jcryptool.thirdparty.m2bundle.p2/pom.xml#L27-L29
+- Then, just run `bin/build-all` and then `bin/publish-p2-m2bundle`
+
 ## Basic structure of how it works
 
 Just a very rough overview, because it might still be subject to change:
