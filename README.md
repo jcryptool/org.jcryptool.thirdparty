@@ -4,9 +4,21 @@
 
 This project is for packaging third-party libraries. However, these dependencies are only present as group/artifact/version tuples in the pom.xml files. They get eventually resolved, and repackaged by JCrypTool CI and made available through Eclipse P2 update sites so the [core repository](https://github.com/jcryptool/core) can link them via the Eclipse RCP "Target platform" feature. Please refer to that repository for how we license JCT code. In this repository, we specifically express no notion of ownership or copyright to the libraries referenced by and eventually repackaged through the Maven pom.xml files. All rights when in doubt are with the authors of these libraries.
 
+The update sites URLs of this project are currently:
+
+ - https://simlei.github.io/org.jcryptool.thirdparty/site/jre
+ - https://simlei.github.io/org.jcryptool.thirdparty/site/m2bundle
+
+They are made available through the "GitHub Pages" service.
+
+Impression of the p2 update sites in practice: 
+
+![core target platform with these update sites in use](doc/scrTargetPlatform.png)
+
+
 ## Purpose
 
-This project serves the [JCrypTool (JCT) project](https://github.com/jcryptool/core). JCT is an Eclipse Rich Client Platform application. It requires Java artifacts (JARs) to be provided as OSGi bundles. Often, these can be found on the [Eclipse Orbit](https://www.eclipse.org/orbit/) update sites. However, some times this is not enough. Examples for which this project was initially conceived are:
+This project serves the [JCrypTool (JCT) project](https://github.com/jcryptool/core). JCT is an Eclipse Rich Client Platform application. It requires Java artifacts (JARs) to be provided as OSGi bundles. Often, these can be found on the [Eclipse Orbit](https://www.eclipse.org/orbit/) update sites. However, some times this is not enough. This issue which describes the situation from which this project is used: https://github.com/jcryptool/core/issues/150. The use cases are currently:
 
 - [Migration from Java 8 to Java 11](bundles/org.jcryptool.thirdparty.m2bundle.jaxb/README-why.md): We missed javax.xml functionality which was removed from the JDK between those versions. The Orbit bundles were outdated (javax.xml 2.2), however, we required an API from 2.3 upward.
 - Bugfixes of Eclipse platform libraries (as incubation before they ideally end up upstream and we don't need them anymore)
