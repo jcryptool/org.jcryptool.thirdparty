@@ -3,5 +3,5 @@
 bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 rootdir="$bindir/.."
 
-"$bindir/publish-p2" "releng/org.jcryptool.thirdparty.jre.p2/target/repository" "$rootdir/../org.jcryptool.thirdparty.p2/jre" "../bin/gitPush"
+"$bindir/publish-p2" "releng/org.jcryptool.thirdparty.jre.p2/target/repository" "$rootdir/../org.jcryptool.thirdparty.p2/jre" "$bindir/gitPush"
 

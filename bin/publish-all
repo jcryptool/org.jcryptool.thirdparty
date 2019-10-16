@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+rootdir="$bindir/.."
+
+"$bindir/publish-p2" "releng/org.jcryptool.thirdparty.jre.p2/target/repository" "$rootdir/../org.jcryptool.thirdparty.p2/jre"
+"$bindir/publish-p2" "releng/org.jcryptool.thirdparty.m2bundle.p2/target/repository" "$rootdir/../org.jcryptool.thirdparty.p2/m2bundle"
+
+if [[ -n "$DRYRUN" ]]; then
+    echo "would do now: " "$bindir/gitPush" "$rootdir/../org.jcryptool.thirdparty.p2"
+else
+    "$bindir/gitPush" "$rootdir/../org.jcryptool.thirdparty.p2"
+fi

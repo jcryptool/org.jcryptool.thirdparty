@@ -24,8 +24,8 @@ executable="$1"; shift;
 if [[ ! -d "$absPathToP2" ]]; then
     echo "relative p2 path $pathToP2 not found under thirdparty project" >&2; exit 1;
 fi
-if [[ ! -f "$absPathToP2/p2content.xml" ]]; then
-    echo "p2 repository directory $absPathToP2 does not seem to contain a valid p2 update site (no p2content.xml)" >&2; exit 1;
+if [[ ! -f "$absPathToP2/content.jar" ]]; then
+    echo "p2 repository directory $absPathToP2 does not seem to contain a valid p2 update site (no content.jar)" >&2; exit 1;
 fi
 if [[ -n "$executable" ]] && [[ ! -x "$executable" ]]; then
     echo "no executable: $executable" >&2; exit 1;
@@ -43,8 +43,7 @@ else
     }
 fi
 
-if [[ $? == 0 ]]; then
-else
+if [[ $? != 0 ]]; then
     echo "something went wrong when checking the p2 destination" >&2; exit 2;
 fi
 
@@ -54,12 +53,12 @@ set -euo pipefail
 
 if [[ -n "$DRYRUN" ]]; then
     echo "would now do: " cp -r "$absPathToP2/*" "$targetDirectory/"
-    if [[ -x "$executableAbs" ]]; then
+    if [[ -x "$executable" ]]; then
         echo "would do on success: " "$executable" "$targetDirectory"
     fi
 else
     cp -r "$absPathToP2/*" "$targetDirectory/"
-    if [[ -x "$executableAbs" ]]; then
+    if [[ -x "$executable" ]]; then
         "$executable" "$targetDirectory"
     fi
 fi
