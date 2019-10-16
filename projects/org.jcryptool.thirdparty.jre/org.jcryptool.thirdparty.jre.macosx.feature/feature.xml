@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.jcryptool.thirdparty.jre.macosx.feature"
-      label="Feature"
+      label="JRE for OSX 64 bit"
       version="11.0.4.qualifier">
       
    <description>
-      OpenJDK JRE for MacOS X
+      OpenJDK JRE for OS X
    </description>
 
    <copyright>

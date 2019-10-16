@@ -3,4 +3,5 @@
 bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 rootdir="$bindir/.."
 
+cd "$rootdir"
 "$bindir/build-all" && "$bindir/publish-all"

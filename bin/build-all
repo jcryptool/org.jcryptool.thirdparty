@@ -11,4 +11,4 @@ set -euo pipefail
 #       > 'org.eclipse.equinox.p2.iu; org.jcryptool.thirdparty.jre.linux64.feature.feature.group 0.0.0' but it could not be found
 
 cd "$rootdir"
-mvn clean verify
+exec mvn clean verify
