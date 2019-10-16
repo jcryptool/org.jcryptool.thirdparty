@@ -4,7 +4,7 @@
 		<groupId>org.jcryptool.thirdparty</groupId>
 		<artifactId>org.jcryptool.thirdparty.releng</artifactId>
 		<relativePath>./../</relativePath>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>org.jcryptool.thirdparty.jre.p2</artifactId>
 	<packaging>eclipse-repository</packaging>

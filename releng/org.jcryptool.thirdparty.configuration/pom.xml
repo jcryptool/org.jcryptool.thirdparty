@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jcryptool.thirdparty</groupId>
 	<artifactId>org.jcryptool.thirdparty.configuration</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipse-repo.url>http://download.eclipse.org/releases/latest</eclipse-repo.url>
 		<project.groupid>org.jcryptool.thirdparty</project.groupid>
-		<global.version>0.0.1-SNAPSHOT</global.version>
+		<global.version>0.0.1</global.version>
 	</properties>
 
 	<repositories>

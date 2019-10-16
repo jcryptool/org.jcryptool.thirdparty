@@ -2,7 +2,7 @@
 <feature
       id="org.jcryptool.thirdparty.jre.win64.feature"
       label="JRE for Windows 64 bit"
-      version="11.0.4.qualifier">
+      version="11.0.4">
 
    <description>
       OpenJDK JRE for Windows 64 x86_64

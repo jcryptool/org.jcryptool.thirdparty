@@ -10,7 +10,7 @@
 		<groupId>org.jcryptool.thirdparty</groupId>
 		<artifactId>org.jcryptool.thirdparty.root</artifactId>
 		<relativePath>./../../</relativePath>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 
 	<name>org.jcryptool.thirdparty.m2bundle.jaxb</name>
