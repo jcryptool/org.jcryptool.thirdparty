@@ -2,6 +2,10 @@
 !/projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.macosx.feature/jre/**/*
 !/projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.win64.feature/jre/**/*
 
+# this is the update site and must be force-add-updated
+/site/**/*
+!/site/.gitkeep
+
 target/
 pom.xml.tag
 pom.xml.releaseBackup
