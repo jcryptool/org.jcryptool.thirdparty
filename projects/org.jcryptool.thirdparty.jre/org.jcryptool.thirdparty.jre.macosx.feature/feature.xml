@@ -3,17 +3,17 @@
       id="org.jcryptool.thirdparty.jre.macosx.feature"
       label="Feature"
       version="11.0.4.qualifier">
-
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+      
+   <description>
+      OpenJDK JRE for MacOS X
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright>
+       Copyright and license to this feature: We, JCrypTool as well as its contributors) assume no rights to any of the files offered here. Please refer to the license information that comes packaged with this feature. )
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
+   <license>
+       Copyright and license to this feature: We, JCrypTool as well as its contributors) assume no rights to any of the files offered here. Please refer to the license information that comes packaged with this feature. )
    </license>
 
 </feature>
