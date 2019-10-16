@@ -7,7 +7,7 @@ rootdir="$bindir/.."
 "$bindir/publish-p2" "releng/org.jcryptool.thirdparty.m2bundle.p2/target/repository" "$rootdir/site/m2bundle"
 
 if [[ -n "$DRYRUN" ]]; then
-    echo "would do now: " "$bindir/gitPush" "$rootdir/../org.jcryptool.thirdparty.p2"
+    echo "would do now: " "$bindir/gitPush" "$rootdir/site"
 else
-    "$bindir/gitPush" "$rootdir/../org.jcryptool.thirdparty.p2"
+    "$bindir/gitPush" "$rootdir/site"
 fi
