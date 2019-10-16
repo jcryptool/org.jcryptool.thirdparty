@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+rootdir="$bindir/.."
+
+set -euo pipefail
+
+# single p2 build cmd for doing so seems to be $ mvn clean  verify -pl bundles/org.jcryptool.thirdparty.jre,releng/org.jcryptool.thirdparty.jre.p2 -am
+# but it does not work because of a weird error a la
+#       > Missing requirement: org.jcryptool.thirdparty.jre.p2 raw:0.0.1.'SNAPSHOT'/format(n[.n=0;[.n=0;[-S]]]):0.0.1-SNAPSHOT requires
+#       > 'org.eclipse.equinox.p2.iu; org.jcryptool.thirdparty.jre.linux64.feature.feature.group 0.0.0' but it could not be found
+
+cd "$rootdir"
+mvn clean verify

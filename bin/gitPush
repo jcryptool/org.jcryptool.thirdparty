@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# simple github pages delivery
+# TODO: verify repository state? is supposed to be only delivery vehicle...
+
+set -euo pipefail
+
+path="$1"
+cd "$path"
+git add -A .
+git commit -m 'generic update, see org.jcryptool.thirdparty for definition changelog'
+git push -u origin master
