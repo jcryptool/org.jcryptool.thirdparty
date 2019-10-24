@@ -1,6 +1,6 @@
 instructions.configure=\
-    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:../Eclipse/features/org.jcryptool.thirdparty.jre.macosx.feature_11.0.4/jre/Contents/Home/bin);\
-    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_11.0.4/jre/Contents/Home/bin/,targetFile:java,permissions:755);\
-    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_11.0.4/jre/Contents/Home/lib/,targetFile:jspawnhelper,permissions:755);
+    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:../Eclipse/features/org.jcryptool.thirdparty.jre.macosx.feature_11.0.5.001/jre/Contents/Home/bin);\
+    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_11.0.5.001/jre/Contents/Home/bin/,targetFile:java,permissions:755);\
+    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_11.0.5.001/jre/Contents/Home/lib/,targetFile:jspawnhelper,permissions:755);
 instructions.unconfigure=\
     org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:null);

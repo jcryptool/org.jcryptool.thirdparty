@@ -2,7 +2,7 @@
 <feature
       id="org.jcryptool.thirdparty.jre.linux64.feature"
       label="JRE for Linux 64 bit"
-      version="11.0.4">
+      version="11.0.5.001">
 
    <description>
       OpenJDK JRE for Linux x86_64
