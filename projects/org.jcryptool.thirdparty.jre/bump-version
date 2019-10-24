@@ -26,11 +26,13 @@ read -p "enter the new version or abort with Control-C: " -r version; version="$
 [[ -z "$version" ]] && exit 2;
 
 while read -r file; do
+    [[ "$file" = '#'* ]] && continue;
     [[ -f "$PWD/$file" ]] && sed -i -- "s/$currentversion/$version/g" "$PWD/$file" && echo replaced in "$PWD/$file"
     [[ ! -f "$PWD/$file" ]] && "echo WARNING: replace loc $PWD/$file is not a file! not processing it..." >&2
 done < "$thisrepo_locs"
 cd "$core_root"
 while read -r file; do
+    [[ "$file" = '#'* ]] && continue;
     [[ -f "$PWD/$file" ]] && sed -i -- "s/$currentversion/$version/g" "$PWD/$file" && echo replaced in "$PWD/$file"
     [[ ! -f "$PWD/$file" ]] && "echo WARNING: replace loc $PWD/$file is not a file! not processing it..." >&2
 done < "$core_locs"
