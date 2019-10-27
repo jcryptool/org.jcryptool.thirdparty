@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+bindir="${0%/*}"
 rootdir="$bindir/.."
 
 cd "$rootdir"

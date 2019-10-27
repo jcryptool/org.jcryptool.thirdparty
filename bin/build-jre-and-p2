@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"
+rootdir="$bindir/.."
+
+cd "$rootdir"
+
+set -eou pipefail
+
+mvn -pl \
+projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.linux64.feature,\
+projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.macosx.feature,\
+projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.win64.feature  \
+-am clean package install
+
+mvn -pl \
+    releng/org.jcryptool.thirdparty.jre.p2 \
+-am clean package

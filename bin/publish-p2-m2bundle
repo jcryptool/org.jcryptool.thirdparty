@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+bindir="${0%/*}"
 rootdir="$bindir/.."
 
 "$bindir/publish-p2" "releng/org.jcryptool.thirdparty.m2bundle.p2/target/repository" "$rootdir/site/m2bundle" "$bindir/gitPush"
