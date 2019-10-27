@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+rootdir="$bindir/.."
+
+set -euo pipefail
+
+cd "$rootdir"
+exec  mvn -pl projects/org.jcryptool.thirdparty.platformpatches/org.eclipse.help.ui,releng/org.jcryptool.thirdparty.platform.p2 clean package

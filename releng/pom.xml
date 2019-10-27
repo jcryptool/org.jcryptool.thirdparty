@@ -13,5 +13,6 @@
     <modules>
         <module>org.jcryptool.thirdparty.m2bundle.p2</module>
         <module>org.jcryptool.thirdparty.jre.p2</module>
+        <module>org.jcryptool.thirdparty.platform.p2</module>
     </modules>
 </project>
