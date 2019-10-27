@@ -22,7 +22,7 @@
               <scanIntervalSeconds>10</scanIntervalSeconds>
               <webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
               <webApp>
-                <contextPath>/site</contextPath>
+                  <contextPath>/site/jre</contextPath>
               </webApp>
             </configuration>
           </plugin>
