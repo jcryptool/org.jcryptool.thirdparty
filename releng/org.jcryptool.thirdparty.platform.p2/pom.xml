@@ -1,0 +1,86 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.jcryptool.thirdparty</groupId>
+		<artifactId>org.jcryptool.thirdparty.releng</artifactId>
+		<relativePath>./../</relativePath>
+		<version>0.0.1</version>
+	</parent>
+  <!-- <parent> -->
+  <!--   <artifactId>eclipse.platform.ua</artifactId> -->
+  <!--   <groupId>eclipse.platform.ua</groupId> -->
+  <!--   <version>4.14.0-SNAPSHOT</version> -->
+  <!-- </parent> -->
+  <artifactId>org.jcryptool.thirdparty.platform.p2</artifactId>
+  <version>0.0.1</version>
+  <packaging>eclipse-repository</packaging>
+
+  <build>
+      <plugins>
+        <!-- <plugin> -->
+        <!--     <groupId>org.eclipse.tycho</groupId> -->
+        <!--     <artifactId>tycho-p2-repository-plugin</artifactId> -->
+        <!--     <version>1.5.0</version> -->
+        <!--     <configuration> -->
+        <!--         <includeAllDependencies>false</includeAllDependencies> -->
+        <!--         <createArtifactRepository>true</createArtifactRepository> -->
+        <!--     </configuration> -->
+        <!-- </plugin> -->
+          <plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.4.21.v20190926</version>
+            <configuration>
+              <supportedPackagings>
+                <supportedPackaging>eclipse-repository</supportedPackaging>
+              </supportedPackagings>
+              <scanIntervalSeconds>10</scanIntervalSeconds>
+              <webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
+              <webApp>
+                <contextPath>/site</contextPath>
+              </webApp>
+            </configuration>
+          </plugin>
+      <plugin>
+         <groupId>org.eclipse.tycho</groupId>
+         <artifactId>tycho-p2-repository-plugin</artifactId>
+         <version>${tycho.version}</version>
+         <configuration>
+            <includeAllDependencies>true</includeAllDependencies>
+            <createArtifactRepository>true</createArtifactRepository>
+         </configuration>
+      </plugin>
+ <plugin>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-p2-director-plugin</artifactId>
+    <version>${tycho.version}</version>
+    <executions>
+     <execution>
+      <id>materialize-products</id>
+      <goals>
+       <goal>materialize-products</goal>
+      </goals>
+     </execution>
+     <execution>
+      <id>archive-products</id>
+      <goals>
+       <goal>archive-products</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+          <!-- <plugin> -->
+          <!--   <groupId>org.eclipse.tycho</groupId> -->
+          <!--   <artifactId>tycho-p2-repository-plugin</artifactId> -->
+          <!--   <version>${tycho.version}</version> -->
+          <!--   <configuration> -->
+          <!--       <createArtifactRepository>true</createArtifactRepository> -->
+          <!--       <includeAllDependencies>true</includeAllDependencies> -->
+          <!--   </configuration> -->
+          <!-- </plugin> -->
+          
+      </plugins>
+  </build>
+</project>
+
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="org.eclipse.help.ui" version="4.1.600.v20190814-0936">
+       <category name="ua" />
+   </bundle>
+   <category-def name="ua" label="Patches for eclipse.platform.ua" />
+</site>
