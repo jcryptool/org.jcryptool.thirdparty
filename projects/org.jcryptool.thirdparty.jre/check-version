@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-cd "${$0%/*}"
-grep -R '11\.0\.' --include='pom.xml' --include='p2.inf' --include='feature.xml' . | sed '/\/target\//d'

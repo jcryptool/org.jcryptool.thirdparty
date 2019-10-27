@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+bumpver_dir="${0%/*}"; bumpver_dir="$(realpath "$bumpver_dir")"
+thirdpartyrepo_dir="$bumpver_dir/../.."
+jreproject_dir="$thirdpartyrepo_dir/projects/org.jcryptool.thirdparty.jre"
+: ${JCT_CORE_HOME:="$thirdpartyrepo_dir/../core"}
+
+jrerepo_locs="$bumpver_dir/bump-jre-version-locations--jre-repo.txt"
+core_locs="$bumpver_dir/bump-jre-version-locations--core-repo.txt"
+
+[[ ! -f "$jrerepo_locs" ]] && { echo "did not find this repo's bump version locations '$jrerepo_locs'" >&2; exit 1; }
+[[ ! -f "$core_locs" ]] && { echo "did not find core repo's bump version locations '$core_locs'" >&2; exit 1; }
+[[ ! -d "$thirdpartyrepo_dir" ]] && { echo "did not find this repo's root dir '$thirdpartyrepo_dir'" >&2; exit 1; }
+[[ ! -d "$JCT_CORE_HOME" ]] && { echo "did not find JCT/core repo. It was expected at $JCT_CORE_HOME. You may export JCT_CORE_HOME to specify this location." >&3; exit 1; }
+[[ ! -d "$JCT_CORE_HOME/org.jcryptool.product" ]] && { echo "core repo root JCT_CORE_HOME has no org.jcryptool.product; that aint right. exiting." >&2; exit 1; }
+
+cd "$thirdpartyrepo_dir"
+if [[ -n "$CURVER" ]]; then
+    currentversion="$CURVER"
+else
+    currentversion="$(cat "$jrerepo_locs" | grep 'pom.xml' |  head -n 1 | xargs cat | sed -n 's/.*version.\(11.*\)..version.*/\1/p' | head -n 1)"
+fi
+[[ -z "$currentversion" ]] && { echo "could not find current version" >&2; exit 1; }
+
+echo "The current version is $currentversion"
+read -p "enter the new version or abort with Control-C: " -r version; version="$(echo "$version" | sed 's/[ \n\t]//g')";
+[[ -z "$version" ]] && exit 2;
+
+while read -r file; do
+    [[ "$file" = '#'* ]] && continue;
+    [[ -f "$PWD/$file" ]] && sed -i -- "s/$currentversion/$version/g" "$PWD/$file" && echo replaced in "$PWD/$file"
+    [[ ! -f "$PWD/$file" ]] && "echo WARNING: replace loc $PWD/$file is not a file! not processing it..." >&2
+done < "$jrerepo_locs"
+
+cd "$JCT_CORE_HOME"
+while read -r file; do
+    [[ "$file" = '#'* ]] && continue;
+    [[ -f "$PWD/$file" ]] && sed -i -- "s/$currentversion/$version/g" "$PWD/$file" && echo replaced in "$PWD/$file"
+    [[ ! -f "$PWD/$file" ]] && "echo WARNING: replace loc $PWD/$file is not a file! not processing it..." >&2
+done < "$core_locs"
