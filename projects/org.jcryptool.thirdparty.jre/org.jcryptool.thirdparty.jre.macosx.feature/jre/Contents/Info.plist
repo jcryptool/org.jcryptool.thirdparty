@@ -7,13 +7,13 @@
         <key>CFBundleExecutable</key>
         <string>libjli.dylib</string>
         <key>CFBundleGetInfoString</key>
-        <string>OpenJDK 11.0.5+10</string>
+        <string>OpenJDK 13.0.2+8</string>
         <key>CFBundleIdentifier</key>
-        <string>net.java.openjdk.11.0.5.jre</string>
+        <string>net.java.openjdk.13.0.2.jre</string>
         <key>CFBundleInfoDictionaryVersion</key>
         <string>7.0</string>
         <key>CFBundleName</key>
-        <string>OpenJDK 11.0.5</string>
+        <string>OpenJDK 13.0.2</string>
         <key>CFBundlePackageType</key>
         <string>BNDL</string>
         <key>CFBundleShortVersionString</key>
@@ -21,7 +21,7 @@
         <key>CFBundleSignature</key>
         <string>????</string>
         <key>CFBundleVersion</key>
-        <string>11.0.5</string>
+        <string>13.0.2</string>
         <key>JavaVM</key>
         <dict>
                 <key>JVMMinimumFrameworkVersion</key>
@@ -29,11 +29,11 @@
                 <key>JVMMinimumSystemVersion</key>
                 <string>10.6.0</string>
                 <key>JVMPlatformVersion</key>
-                <string>11.0</string>
+                <string>13.0</string>
                 <key>JVMVendor</key>
                 <string>AdoptOpenJDK</string>
                 <key>JVMVersion</key>
-                <string>11.0.5</string>
+                <string>13.0.2</string>
         </dict>
 </dict>
 </plist>
