@@ -27,6 +27,14 @@
 								<artifact>
 									<id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.jaxb:${global.version}</id>
 								</artifact>
+								<artifact>
+									<id>com.google.guava:guava:29.0-jre</id>
+                                    <source></source>
+								</artifact>
+								<artifact>
+									<id>com.diffplug.durian:durian:3.4.0</id>
+                                    <source></source>
+								</artifact>
 							</artifacts>
 						</configuration>
 					</execution>

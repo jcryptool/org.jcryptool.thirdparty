@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+( cd "$rootdir/releng/org.jcryptool.thirdparty.m2bundle.p2"; mvn -Dclean.skip=true jetty:run "$@"; )
+

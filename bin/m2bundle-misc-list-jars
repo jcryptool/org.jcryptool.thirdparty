@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+jarfile="$rootdir/projects/org.jcryptool.thirdparty.m2bundle.misc/target/$1"
+
+jar tf "$jarfile"
+
