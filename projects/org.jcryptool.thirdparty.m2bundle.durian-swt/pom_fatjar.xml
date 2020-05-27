@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+
+
+<artifactId>org.jcryptool.thirdparty.m2bundle.swtrelated</artifactId>
+
+<parent>
+    <groupId>org.jcryptool.thirdparty</groupId>
+    <artifactId>org.jcryptool.thirdparty.root</artifactId>
+    <relativePath>./../../</relativePath>
+    <version>0.0.1</version>
+</parent>
+
+<name>org.jcryptool.thirdparty.m2bundle.swtrelated</name>
+<description>All libraries that depend on SWT 3.105.2; because of faulty pom, repackaged.</description>
+
+<packaging>bundle</packaging>
+
+<dependencies>
+    <dependency>
+        <groupId>com.diffplug.durian</groupId>
+        <artifactId>durian-swt</artifactId>
+        <version>3.3.1</version>
+        <exclusions>
+            <exclusion>
+                <groupId>org.eclipse.platform</groupId>
+                <artifactId>org.eclipse.swt.gtk.linux.aarch64</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.eclipse.platform</groupId>
+                <artifactId>org.eclipse.swt.gtk.linux.arm</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.1.2</version>
+            <executions>
+                <execution>
+                    <id>src-dependencies</id>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>unpack-dependencies</goal>
+                    </goals>
+                    <configuration>
+                        <classifier>sources</classifier>
+                        <failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
+                        <outputDirectory>${project.build.directory}/sources</outputDirectory>
+                    </configuration>
+                </execution>
+
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.3</version>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>maven-bundle-plugin</artifactId>
+            <version>3.5.0</version>
+            <extensions>true</extensions>
+
+            <configuration>
+                <instructions>
+                    <Export-Package>*</Export-Package>
+                    <Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>
+                    <Embed-Transitive>true</Embed-Transitive>
+                    <Include-Resource>target/sources</Include-Resource>
+                </instructions>
+                <createDependencyReducedPom>true</createDependencyReducedPom>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-maven-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <extensions>true</extensions>
+        </plugin>
+    </plugins>
+</build>
+</project>

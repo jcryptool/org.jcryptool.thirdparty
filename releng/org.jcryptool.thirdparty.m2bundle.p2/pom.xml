@@ -11,6 +11,7 @@
 
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.reficio</groupId>
 				<artifactId>p2-maven-plugin</artifactId>
@@ -28,12 +29,19 @@
 									<id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.jaxb:${global.version}</id>
 								</artifact>
 								<artifact>
+									<id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.durian-swt:${global.version}</id>
+                                    <source>true</source>
+								</artifact>
+								<artifact>
 									<id>com.google.guava:guava:29.0-jre</id>
-                                    <source></source>
+                                    <source>true</source>
 								</artifact>
 								<artifact>
 									<id>com.diffplug.durian:durian:3.4.0</id>
-                                    <source></source>
+                                    <source>true</source>
+								</artifact>
+								<artifact>
+									<id>com.diffplug.osgi:com.diffplug.osgi.extension.sun.misc:0.0.0</id>
 								</artifact>
 							</artifacts>
 						</configuration>
