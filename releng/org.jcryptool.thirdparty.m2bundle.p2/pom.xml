@@ -28,9 +28,16 @@
                                 <artifact>
                                     <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.jaxb:${global.version}</id>
                                 </artifact>
+                                <!-- <artifact> -->
+                                <!--     <id>com.diffplug.durian:durian-swt.os:3.3.1</id> -->
+                                <!--     <source>true</source> -->
+                                <!-- </artifact> -->
                                 <artifact>
                                     <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.durian-swt:${global.version}</id>
                                     <source>true</source>
+                                    <excludes>
+                                        <exclude>org.eclipse.*</exclude>
+                                    </excludes>
                                 </artifact>
                                 <artifact>
                                     <id>com.google.guava:guava:29.0-jre</id>
@@ -41,7 +48,28 @@
                                     <source>true</source>
                                 </artifact>
                                 <artifact>
+                                    <id>com.diffplug.durian:durian-collect:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-reflect:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-io:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
                                     <id>com.diffplug.osgi:com.diffplug.osgi.extension.sun.misc:0.0.0</id>
+                                </artifact>
+                                <artifact>
+                                    <id>com.fasterxml.jackson.core:jackson-core:2.11.0</id>
+                                </artifact>
+                                <artifact>
+                                    <id>com.fasterxml.jackson.core:jackson-annotations:2.11.0</id>
+                                </artifact>
+                                <artifact>
+                                    <id>com.fasterxml.jackson.core:jackson-databind:2.11.0</id>
                                 </artifact>
                             </artifacts>
                         </configuration>

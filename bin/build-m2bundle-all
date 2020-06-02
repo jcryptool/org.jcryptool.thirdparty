@@ -10,7 +10,7 @@ set -eou pipefail
 mvn  dependency:sources dependency:resolve -Dclassifier=javadoc -pl \
 projects/org.jcryptool.thirdparty.m2bundle.jaxb,\
 projects/org.jcryptool.thirdparty.m2bundle.durian-swt \
--am clean prepare-package package install
+-am clean package install
 
 mvn -pl \
     releng/org.jcryptool.thirdparty.m2bundle.p2 \
