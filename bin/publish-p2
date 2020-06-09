@@ -51,7 +51,7 @@ fi
 
 set -euo pipefail
 
-if [[ -n "${DRYRUN:+x}" ]]; then
+if [[ ! -z "${DRYRUN:+x}" ]]; then
     echo "would now do: " cp -r "$absPathToP2"/* "$targetDirectory/"
     if [[ -x "$executable" ]]; then
         echo "would do on success: " "$executable" "$targetDirectory"

@@ -7,11 +7,13 @@ cd "$rootdir"
 
 set -eou pipefail
 
-mvn  dependency:sources dependency:resolve -Dclassifier=javadoc -pl \
+mvn -pl \
 projects/org.jcryptool.thirdparty.m2bundle.jaxb,\
-projects/org.jcryptool.thirdparty.m2bundle.durian-swt \
+projects/org.jcryptool.thirdparty.m2bundle.durian-swt,\
+projects/org.jcryptool.thirdparty.m2bundle.durian-swt-os \
 -am clean package install
 
 mvn -pl \
-    releng/org.jcryptool.thirdparty.m2bundle.p2 \
+releng/org.jcryptool.thirdparty.m2bundle.p2 \
 -am clean package
+

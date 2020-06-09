@@ -12,6 +12,7 @@
     <modules>
         <module>org.jcryptool.thirdparty.m2bundle.jaxb</module>
         <module>org.jcryptool.thirdparty.m2bundle.durian-swt</module>
+        <module>org.jcryptool.thirdparty.m2bundle.durian-swt-os</module>
         <module>org.jcryptool.thirdparty.jre</module>
         <module>org.jcryptool.thirdparty.platformpatches</module>
     </modules>

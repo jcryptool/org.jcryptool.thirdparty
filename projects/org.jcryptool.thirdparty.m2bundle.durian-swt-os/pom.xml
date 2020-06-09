@@ -4,7 +4,7 @@
 <modelVersion>4.0.0</modelVersion>
 
 
-<artifactId>org.jcryptool.thirdparty.m2bundle.durian-swt</artifactId>
+<artifactId>org.jcryptool.thirdparty.m2bundle.durian-swt-os</artifactId>
 
 <parent>
     <groupId>org.jcryptool.thirdparty</groupId>
@@ -28,42 +28,38 @@
         <!-- TODO: CHECK REALLY WHETHER THIS EXCLUSION FEST IS NECESSARY -->
         <!-- TODO: LAST, IT WAS only necessary because of durian-swt jar resolution error so it somehow downloaded swt.os in its stead. -->
         <groupId>com.diffplug.durian</groupId>
-        <artifactId>durian-swt</artifactId>
+        <artifactId>durian-swt.os</artifactId>
         <version>3.3.1</version>
-        <exclusions>
-            <exclusion>
-                <groupId>com.diffplug.durian</groupId>
-                <artifactId>durian-collect</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.diffplug.durian</groupId>
-                <artifactId>durian-core</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.diffplug.durian</groupId>
-                <artifactId>durian-concurrent</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.diffplug.durian</groupId>
-                <artifactId>durian-rx</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>io.reactivex.rxjava2</groupId>
-                <artifactId>rxjava</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.diffplug.durian</groupId>
-                <artifactId>durian-swt.os</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>org.eclipse.platform</groupId>
-                <artifactId>org.eclipse.swt.gtk.linux.aarch64</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>org.eclipse.platform</groupId>
-                <artifactId>org.eclipse.swt.gtk.linux.arm</artifactId>
-            </exclusion>
-        </exclusions>
+        <!-- <exclusions> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>com.diffplug.durian</groupId> -->
+        <!--         <artifactId>durian-collect</artifactId> -->
+        <!--     </exclusion> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>com.diffplug.durian</groupId> -->
+        <!--         <artifactId>durian-core</artifactId> -->
+        <!--     </exclusion> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>com.diffplug.durian</groupId> -->
+        <!--         <artifactId>durian-concurrent</artifactId> -->
+        <!--     </exclusion> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>com.diffplug.durian</groupId> -->
+        <!--         <artifactId>durian-rx</artifactId> -->
+        <!--     </exclusion> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>io.reactivex.rxjava2</groupId> -->
+        <!--         <artifactId>rxjava</artifactId> -->
+        <!--     </exclusion> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>org.eclipse.platform</groupId> -->
+        <!--         <artifactId>org.eclipse.swt.gtk.linux.aarch64</artifactId> -->
+        <!--     </exclusion> -->
+        <!--     <exclusion> -->
+        <!--         <groupId>org.eclipse.platform</groupId> -->
+        <!--         <artifactId>org.eclipse.swt.gtk.linux.arm</artifactId> -->
+        <!--     </exclusion> -->
+        <!-- </exclusions> -->
     </dependency>
 </dependencies>
 
@@ -77,9 +73,8 @@
 
             <configuration>
                 <instructions>
-                    <!-- <_exportcontents>*</_exportcontents> -->
-                    <!-- <Embed-Dependency>!*eclipse*,!durian-swt,*</Embed-Dependency> -->
-                    <Embed-Dependency>!*eclipse*,!durian-swt</Embed-Dependency>
+                    <_exportcontents>*</_exportcontents>
+                    <Embed-Dependency>*</Embed-Dependency>
                     <!-- <Embed-Transitive>true</Embed-Transitive> -->
                 </instructions>
                 <createDependencyReducedPom>true</createDependencyReducedPom>
