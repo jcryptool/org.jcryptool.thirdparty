@@ -6,7 +6,9 @@
 set -euo pipefail
 
 path="$1"
+echo cd "$path"
 cd "$path"
+echo git add -A .
 git add -A .
 git commit -m 'generic update, see org.jcryptool.thirdparty for definition changelog'
 git push -u origin master

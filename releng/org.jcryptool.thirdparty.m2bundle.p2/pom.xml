@@ -26,28 +26,32 @@
                         <configuration>
                             <artifacts>
 
+                            <!-- BEGIN: JAVA XML BINDINGS REPLACEMENT -->
+                                <artifact>
+                                    <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.jaxb:${global.version}</id>
+                                </artifact>
+                            <!-- END:   JAVA XML BINDINGS REPLACEMENT -->
+
                             <!-- BEGIN: GOOGLE LIBRARIES -->
-                                <!-- <artifact> -->
-                                <!--     <id>com.google.guava:guava:26.0-jre</id> -->
-                                <!--     <source>true</source> -->
-                                <!-- </artifact> -->
-                                <!-- <artifact> -->
-                                <!--     <id>com.google.code.gson:gson:2.8.6</id> -->
-                                <!--     <source>true</source> -->
-                                <!-- </artifact> -->
-                                <!-- <artifact> -->
-                                <!--     <id>com.google.dagger:dagger:2.4</id> -->
-                                <!--     <source>true</source> -->
-                                <!-- </artifact> -->
-                                <!-- <artifact> -->
-                                <!--     <id>com.google.dagger:dagger-compiler:2.4</id> -->
-                                <!--     <source>true</source> -->
-                                <!-- </artifact> -->
+                                <artifact>
+                                    <id>com.google.guava:guava:26.0-jre</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.google.code.gson:gson:2.8.6</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.google.dagger:dagger:2.4</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.google.dagger:dagger-compiler:2.4</id>
+                                    <source>true</source>
+                                </artifact>
                             <!-- END: GOOGLE LIBRARIES -->
 
-                                <!-- <artifact> -->
-                                <!--     <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.jaxb:${global.version}</id> -->
-                                <!-- </artifact> -->
+
 
                             <!-- BEGIN: DURIAN-SWT -->
                                 <artifact>
@@ -145,3 +149,29 @@
 <!-- MORE INFO: looks like reficio's plugin has a faulty regex that cuts the ".os" at the end and overwrites the jar but not quite sure yet -->
 <!-- MORE INFO: pretty much confirmed. the ".os" is read as a classifier or sth. -->
 <!-- MORE INFO: therefore, I package the .os separately (see m2bundle.durian-swt-os), shadow that dependency in m2bundle.durian-swt so it won't get resolved further, and pull in the rest of the dependencies as shown in this pom. This works and I'm happy with it. -->
+
+<!-- FTR: These were the require-bundles before the durian-swt restructuring: -->
+<!--  com.diffplug.durian.collect, -->
+<!--  com.diffplug.durian.concurrent, -->
+<!--  com.diffplug.durian.core, -->
+<!--  com.diffplug.durian.io, -->
+<!--  com.diffplug.durian.reflect, -->
+<!--  com.diffplug.durian.rx, -->
+<!--  com.diffplug.durian.swt, -->
+<!--  com.google.dagger.compiler, -->
+<!--  com.google.dagger.producers, -->
+<!--  com.google.dagger, -->
+<!--  com.google.gson, -->
+<!--  com.google.guava, -->
+<!--  com.google.guava, -->
+<!--  com.google.j2objc.annotations, -->
+<!--  io.reactivex.rxjava2.rxjava, -->
+<!--  javax.inject, -->
+<!--  org.checkerframework.checker-qual, -->
+<!--  org.codehaus.mojo.animal-sniffer-annotations, -->
+<!--  org.functionaljava, -->
+<!--  org.immutables.value, -->
+<!--  org.jcryptool.thirdparty.m2bundle.durian-swt-os, -->
+<!--  org.jcryptool.thirdparty.m2bundle.jaxb, -->
+<!--  org.reactivestreams.reactive-streams -->
+

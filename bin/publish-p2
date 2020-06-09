@@ -57,6 +57,7 @@ if [[ ! -z "${DRYRUN:+x}" ]]; then
         echo "would do on success: " "$executable" "$targetDirectory"
     fi
 else
+    echo cp -r "$absPathToP2"/* "$targetDirectory/"
     cp -r "$absPathToP2"/* "$targetDirectory/"
     if [[ -x "$executable" ]]; then
         "$executable" "$targetDirectory"

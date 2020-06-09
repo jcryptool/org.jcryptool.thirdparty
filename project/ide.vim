@@ -20,13 +20,14 @@ fun! _toBundleIds() abort
     %g/sun.misc/d
     %g/errorprone/d
     %g/org.jsr/d
-    %g/jakarta.activation/d
 
     %g/^\s*$/d
 endf
 
 fun! _convertTargetToRequire() abort
     call _toBundleIds()
+    %g/jakarta.activation/d
+    %g/m2bundle.durian-swt$/d
     %normal I 
     %normal A,
     normal G$dl

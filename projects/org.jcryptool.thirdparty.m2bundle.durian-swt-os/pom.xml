@@ -75,7 +75,7 @@
                 <instructions>
                     <_exportcontents>*</_exportcontents>
                     <Embed-Dependency>*</Embed-Dependency>
-                    <!-- <Embed-Transitive>true</Embed-Transitive> -->
+                    <Embed-Transitive>true</Embed-Transitive>
                 </instructions>
                 <createDependencyReducedPom>true</createDependencyReducedPom>
             </configuration>
