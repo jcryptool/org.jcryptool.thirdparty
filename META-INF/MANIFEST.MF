@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Thirparty Repository
+Bundle-Name: Thirdparty Repository
 Bundle-SymbolicName: org.jcryptool.thirdparty
 Bundle-Version: 0.0.1.qualifier
 Automatic-Module-Name: org.jcryptool.thirdparty
