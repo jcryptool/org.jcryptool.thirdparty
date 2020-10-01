@@ -1,7 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.jcryptool.thirdparty
+Bundle-Name: Thirdparty Repository
 Bundle-SymbolicName: org.jcryptool.thirdparty
 Bundle-Version: 0.0.1.qualifier
 Automatic-Module-Name: org.jcryptool.thirdparty
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-Vendor: jcryptool.org, by Simon Leischnig
