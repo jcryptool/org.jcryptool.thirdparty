@@ -4,12 +4,6 @@
 
 This project is for packaging third-party libraries. However, these dependencies are only present as group/artifact/version tuples in the pom.xml files. They get eventually resolved, and repackaged by JCrypTool CI and made available through Eclipse P2 update sites so the [core repository](https://github.com/jcryptool/core) can link them via the Eclipse RCP "Target platform" feature. Please refer to that repository for how we license JCT code. In this repository, we specifically express no notion of ownership or copyright to the libraries referenced by and eventually repackaged through the Maven pom.xml files. All rights when in doubt are with the authors of these libraries.
 
-The update sites URLs of this project are currently:
-
- - https://simlei.github.io/org.jcryptool.thirdparty/site/jre
- - https://simlei.github.io/org.jcryptool.thirdparty/site/m2bundle
-
-They are made available through the "GitHub Pages" service.
 
 Impression of the p2 update sites in practice: 
 
@@ -42,10 +36,7 @@ In the linked analysis articles, a solution emerges via multiple Maven plugins. 
 
 ## How to add more Maven Central `<dependencies>`
 
-- the JAXB bundle shows how dependencies are defined: https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/projects/org.jcryptool.thirdparty.m2bundle.jaxb/pom.xml#L21-L34
-- **Either** we add a "misc. dependencies" project like the JAXB project (without a specific topic; where such ) where we can just put another set of these `<dependency>` tags
-- **Or**, clone the JAXB project, adapt the artifact id, add it as `<module>` in https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/projects/pom.xml, and add it as a dependency here: https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/releng/org.jcryptool.thirdparty.m2bundle.p2/pom.xml as such: https://github.com/simlei/org.jcryptool.thirdparty/blob/791bf07f96169ea3a849e1741e40bd99cc3a9375/releng/org.jcryptool.thirdparty.m2bundle.p2/pom.xml#L27-L29
-- Then, just run `bin/build-all` and then `bin/publish-p2-m2bundle`
+[This guide shows you how to add a library like google guava and its sources.](https://github.com/jcryptool/org.jcryptool.thirdparty/wiki/Locally-publish-and-use-%60org.jcryptool.thirdparty.libraries.p2%60-changes)
 
 ## Basic structure of how it works
 
