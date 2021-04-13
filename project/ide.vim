@@ -7,8 +7,8 @@ call _PerformProjectSettings()
 " cd
 exec printf("cd %s", project.loc.Droot)
 
-command! ProjToManifest call _convertTargetToRequire()
-command! ProjToProjectreq call _makeAdditionalPluginstartreqs()
+command! ProjToManifest sp releng/org.jcryptool.thirdparty.libraries.p2/target/repository/plugins/ | call _convertTargetToRequire()
+command! ProjToProjectreq sp releng/org.jcryptool.thirdparty.libraries.p2/target/repository/plugins/ | call _makeAdditionalPluginstartreqs()
 nmap <F11>mf :ProjToManifest<CR>
 nmap <F11>rec :ProjToProjectreq<CR>
 
@@ -28,6 +28,7 @@ fun! _convertTargetToRequire() abort
     call _toBundleIds()
     %g/jakarta.activation/d
     %g/m2bundle.durian-swt$/d
+    %g/j2objc/d
     %normal I 
     %normal A,
     normal G$dl

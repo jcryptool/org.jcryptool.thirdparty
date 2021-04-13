@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+cd "$rootdir"
+
+set -eou pipefail
+
+mvn -pl \
+projects/org.jcryptool.thirdparty.m2bundle.durian-swt,\
+projects/org.jcryptool.thirdparty.m2bundle.durian-swt-os \
+-am clean package install
+
+mvn -pl \
+releng/org.jcryptool.thirdparty.libraries.p2 \
+-am clean package
+

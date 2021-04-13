@@ -1,0 +1,146 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jcryptool.thirdparty</groupId>
+        <artifactId>org.jcryptool.thirdparty.releng</artifactId>
+        <relativePath>./../</relativePath>
+        <version>0.0.1</version>
+    </parent>
+    <artifactId>org.jcryptool.thirdparty.libraries.p2</artifactId>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.reficio</groupId>
+                <artifactId>p2-maven-plugin</artifactId>
+                <version>1.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+
+                            <!-- BEGIN: my new custom libraries -->
+                                <artifact>
+                                    <id>com.google.guava:guava:26.0-jre</id>
+                                    <source>true</source>
+                                </artifact>
+                            <!-- END:   my new custom libraries -->
+
+                            <!-- BEGIN: GOOGLE LIBRARIES -->
+                                <artifact>
+                                    <id>com.google.code.gson:gson:2.8.6</id>
+                                    <source>true</source>
+                                </artifact>
+                                <!-- </artifact> -->
+                            <!-- END: GOOGLE LIBRARIES -->
+
+
+
+                            <!-- BEGIN: DURIAN-SWT -->
+                                <artifact>
+                                    <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.durian-swt:${global.version}</id>
+                                    <source>true</source>
+                                    <excludes>
+                                        <exclude>org.eclipse.*</exclude>
+                                    </excludes>
+                                </artifact>
+                                <artifact>
+                                    <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.durian-swt-os:${global.version}</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-rx:3.0.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>io.reactivex.rxjava2:rxjava:2.0.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-core:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-collect:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-concurrent:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                            <!-- END: DURIAN-SWT -->
+
+                            <!-- BEGIN: OTHER DURIAN LIBS FOR GOOD MEASURE -->
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-reflect:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>com.diffplug.durian:durian-io:1.2.0</id>
+                                    <source>true</source>
+                                </artifact>
+                            <!-- END: OTHER DURIAN LIBS FOR GOOD MEASURE -->
+
+
+                            <!-- BEGIN: FUNCTIONAL LIBRARIES -->
+                                <artifact>
+                                    <id>org.functionaljava:functionaljava:4.8.1</id>
+                                    <source>true</source>
+                                </artifact>
+                                <artifact>
+                                    <id>org.immutables:value:2.8.2</id>
+                                    <source>true</source>
+                                </artifact>
+                            <!-- END: FUNCTIONAL LIBRARIES -->
+
+                            <!-- BEGIN: ARTIFACTS THAT FIX MAVEN / OSGi INSUFFICIENCIES -->
+                                <artifact>
+                                    <id>com.diffplug.osgi:com.diffplug.osgi.extension.sun.misc:0.0.0</id>
+                                </artifact>
+                                <artifact>
+                                    <id>com.sun.activation:jakarta.activation:1.2.2</id>
+                                </artifact>
+                            <!-- END: ARTIFACTS THAT FIX MAVEN / OSGi INSUFFICIENCIES -->
+
+                                
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.5.v20120716</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
+                    <webApp>
+                        <contextPath>/site/libraries</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+<!-- TODO: can we bump rxjava version? -->
+
+<!-- old... -->
+
+<!-- <artifact> -->
+<!--     <id>com.google.dagger:dagger:2.4</id> -->
+<!--     <source>true</source> -->
+<!-- </artifact> -->
+<!-- <artifact> -->
+<!--     <id>com.google.dagger:dagger-compiler:2.4</id> -->
+<!--     <source>true</source> -->
