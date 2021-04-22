@@ -26,14 +26,10 @@
                         <configuration>
                             <artifacts>
 
-                            <!-- BEGIN: my new custom bouncycastle -->
-                            <!--
                                 <artifact>
-                                    <id>com.google.guava:guava:26.0-jre</id>
-                                    <source>true</source>
+                                  <id>org.bouncycastle:bcprov-jdk15on:1.68</id>
                                 </artifact>
-                            -->
-                            <!-- END:   my new custom bouncycastle -->
+
                             </artifacts>
                         </configuration>
                     </execution>
