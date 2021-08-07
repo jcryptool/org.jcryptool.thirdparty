@@ -110,6 +110,11 @@
                                     <id>com.sun.activation:jakarta.activation:1.2.2</id>
                                 </artifact>
                             <!-- END: ARTIFACTS THAT FIX MAVEN / OSGi INSUFFICIENCIES -->
+                                
+								<artifact>
+                                    <id>com.google.protobuf:protobuf-java:3.17.3</id>
+									<source>true</source>
+								</artifact>
 
                                 
                             </artifacts>
