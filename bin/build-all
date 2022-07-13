@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+set -euo pipefail
+
+cd "$rootdir"
+mvn clean verify

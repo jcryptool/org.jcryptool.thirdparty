@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+cd "$rootdir"
+"$bindir/build-all" && "$bindir/publish-all"

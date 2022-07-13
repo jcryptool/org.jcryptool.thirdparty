@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+_declare_dirvar() { local _dir="${BASH_SOURCE[0]}"; _dir="${_dir%/*}"; local varname="${1:-dir}"; local count="${2:-1}"; while [[ "$count" -gt 0 ]]; do _dir="${_dir%/*}"; let count-- || :; done; eval "$varname"'="$_dir"'; }
+_declare_dirvar projdir 0
+
+if [[ "$1" =~ ^--name=(.*) ]]; then
+    _projname="${BASH_REMATCH[1]}"
+    shift
+else
+    _projname="#UNSET#"
+fi
+
+if [[ "$_projname" != "#UNSET" ]]; then
+    vim -c "source $projdir/ide.vim" "$@"
+else
+    vim --cmd "let g:_simpleide_projname='$_projname'" -c "source $projdir/ide.vim" "$@"
+fi
+

@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+[[ "$1" == "--help" || "$1" == "-h" ]] && {
+cat <<EOF
+Copies a built p2 update site to a destination and optionally executes a publish script relative to that destination
+
+Usage: $0 <p2-directory-path> <destination-directory> [<executable>]
+<p2-directory-path>         - relative to the root of the thirdparty repository
+<destination-directory>     - regular path to a directory
+<executable>                - optional; regular path to an executable that gets called with the <destination-directory> as first argument at the end of this script
+EOF
+exit 0
+}
+
+
+bindir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+rootdir="$bindir/.."
+
+pathToP2="$1"; absPathToP2="$rootdir/$pathToP2"; shift;
+targetDirectory="$1"; shift;
+executable="$1"; shift;
+
+# some common sense checks before proceeding
+if [[ ! -d "$absPathToP2" ]]; then
+    echo "relative p2 path $pathToP2 not found under thirdparty project" >&2; exit 1;
+fi
+if [[ ! -f "$absPathToP2/content.jar" ]]; then
+    echo "p2 repository directory $absPathToP2 does not seem to contain a valid p2 update site (no content.jar)" >&2; exit 1;
+fi
+if [[ -n "$executable" ]] && [[ ! -x "$executable" ]]; then
+    echo "no executable: $executable" >&2; exit 1;
+fi
+
+if [[ ! -d "$targetDirectory" ]]; then
+    targetDirectoryParent="$(dirname "$targetDirectory")"
+    if [[ ! -d "$targetDirectoryParent" ]]; then
+        echo "parent of target $targetDirectory does not exist" >&2; exit 1;
+    fi
+    mkdir "$targetDirectory"
+else
+    [[ ! "$targetDirectory" == "/" ]] && rm -rf "$targetDirectory"/* || {
+        echo "uh oh. almost rm -rf /" >&2; exit 3;
+    }
+fi
+
+if [[ $? != 0 ]]; then
+    echo "something went wrong when checking the p2 destination" >&2; exit 2;
+fi
+
+# ----- the quite simple script body
+
+set -euo pipefail
+
+if [[ ! -z "${DRYRUN:+x}" ]]; then
+    echo "would now do: " cp -r "$absPathToP2"/* "$targetDirectory/"
+    if [[ -x "$executable" ]]; then
+        echo "would do on success: " "$executable" "$targetDirectory"
+    fi
+else
+    echo cp -r "$absPathToP2"/* "$targetDirectory/"
+    cp -r "$absPathToP2"/* "$targetDirectory/"
+    if [[ -x "$executable" ]]; then
+        "$executable" "$targetDirectory"
+    fi
+fi

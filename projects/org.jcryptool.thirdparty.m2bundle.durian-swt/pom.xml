@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+
+
+<artifactId>org.jcryptool.thirdparty.m2bundle.durian-swt</artifactId>
+
+<parent>
+    <groupId>org.jcryptool.thirdparty</groupId>
+    <artifactId>org.jcryptool.thirdparty.root</artifactId>
+    <relativePath>./../../</relativePath>
+    <version>0.0.1</version>
+</parent>
+
+<name>org.jcryptool.thirdparty.m2bundle.durian-swt</name>
+<description>Ned Twigg's excellent SWT library; exclude-definition of POM needed because maven central doesn't have some swt JARs</description>
+
+<packaging>bundle</packaging>
+
+<dependencies>
+    <!-- <dependency> -->
+    <!--     <groupId>com.diffplug.durian</groupId> -->
+    <!--     <artifactId>durian-swt.os</artifactId> -->
+    <!--     <version>3.3.1</version> -->
+    <!-- </dependency> -->
+    <dependency>
+        <!-- TODO: CHECK REALLY WHETHER THIS EXCLUSION FEST IS NECESSARY -->
+        <!-- TODO: LAST, IT WAS only necessary because of durian-swt jar resolution error so it somehow downloaded swt.os in its stead. -->
+        <groupId>com.diffplug.durian</groupId>
+        <artifactId>durian-swt</artifactId>
+        <version>3.3.1</version>
+        <exclusions>
+            <exclusion>
+                <groupId>com.diffplug.durian</groupId>
+                <artifactId>durian-collect</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>com.diffplug.durian</groupId>
+                <artifactId>durian-core</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>com.diffplug.durian</groupId>
+                <artifactId>durian-concurrent</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>com.diffplug.durian</groupId>
+                <artifactId>durian-rx</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>io.reactivex.rxjava2</groupId>
+                <artifactId>rxjava</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>com.diffplug.durian</groupId>
+                <artifactId>durian-swt.os</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.eclipse.platform</groupId>
+                <artifactId>org.eclipse.swt.gtk.linux.aarch64</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.eclipse.platform</groupId>
+                <artifactId>org.eclipse.swt.gtk.linux.arm</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>maven-bundle-plugin</artifactId>
+            <version>3.5.0</version>
+            <extensions>true</extensions>
+
+            <configuration>
+                <instructions>
+                    <!-- <_exportcontents>*</_exportcontents> -->
+                    <!-- <Embed-Dependency>!*eclipse*,!durian-swt,*</Embed-Dependency> -->
+                    <Embed-Dependency>!*eclipse*,!durian-swt</Embed-Dependency>
+                    <!-- <Embed-Transitive>true</Embed-Transitive> -->
+                </instructions>
+                <createDependencyReducedPom>true</createDependencyReducedPom>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-maven-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <extensions>true</extensions>
+        </plugin>
+    </plugins>
+</build>
+</project>

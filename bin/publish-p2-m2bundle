@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+"$bindir/publish-p2" "releng/org.jcryptool.thirdparty.m2bundle.p2/target/repository" "$rootdir/site/m2bundle" "$bindir/gitPush"
+

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")";
+rootdir="$bindir/.."
+
+ssh ct 'rm -rf /var/www/cryptool-static/overlay/jct/thirdparty-p2/bouncycastle' && \
+scp -r "releng/org.jcryptool.thirdparty.bouncycastle.p2/target/repository" ct:/var/www/cryptool-static/overlay/jct/thirdparty-p2/bouncycastle
+

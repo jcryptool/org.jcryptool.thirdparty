@@ -1,0 +1,20 @@
+!/projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.linux64.feature/jre/**/*
+!/projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.macosx.feature/jre/**/*
+!/projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.win64.feature/jre/**/*
+!/site/jre/*
+!/site/m2bundle/*
+!/site/platformpatches/*
+
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+/site/
+/projects/org.jcryptool.thirdparty.platformpatches/org.eclipse.help.ui/bin/

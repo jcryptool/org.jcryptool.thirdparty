@@ -1,0 +1,20 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>org.jcryptool.thirdparty.releng</artifactId>
+    <packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.jcryptool.thirdparty</groupId>
+		<artifactId>org.jcryptool.thirdparty.root</artifactId>
+		<relativePath>./../</relativePath>
+		<version>0.0.1</version>
+	</parent>
+
+    <modules>
+        <module>org.jcryptool.thirdparty.bouncycastle.p2</module>
+        <module>org.jcryptool.thirdparty.libraries.p2</module>
+        <module>org.jcryptool.thirdparty.m2bundle.p2</module>
+        <module>org.jcryptool.thirdparty.jre.p2</module>
+        <!-- <module>org.jcryptool.thirdparty.platform.p2</module> --><!--not required anymore-->
+    </modules>
+</project>

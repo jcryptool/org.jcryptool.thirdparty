@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+bindir="${0%/*}"; bindir="$(realpath "$bindir")"
+thirdpartyrepo_dir="$bindir/.."
+
+jreproject_dir="$thirdpartyrepo_dir/projects/org.jcryptool.thirdparty.jre"
+set -euo pipefail
+for jrevariant in "$jreproject_dir"/*; do
+    if [[ -d "$jrevariant" ]]; then
+        while read -r file; do
+            if [[ -L "$file" ]]; then
+                echo "$file" is linked! replacing with real content... >&2
+                realpath="$(realpath "$file")"
+                if [[ -n "$realpath" ]]; then
+                    if [[ -f "$realpath" ]]; then
+                        # echo rm "$file"
+                        rm "$file"
+                        # echo cp "$realpath" "$file"
+                        cp "$realpath" "$file"
+                        echo replaced "${file#$thirdpartyrepo_dir}"
+                    else
+                        echo "$file is a directory; please link it by hand; not implemented yet" >&2
+                    fi
+                else
+                    echo "could not find real path of $file; exiting. This is probably a bug with that particular JRE!" >&2
+                    exit 2
+                fi
+            fi
+        done < <(find "$jrevariant" -name '*')
+    fi
+done
