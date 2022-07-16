@@ -5,6 +5,7 @@
 !/site/m2bundle/*
 !/site/platformpatches/*
 
+/**/jre/
 target/
 pom.xml.tag
 pom.xml.releaseBackup
