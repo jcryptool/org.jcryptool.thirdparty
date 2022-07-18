@@ -1,5 +1,5 @@
 instructions.configure=\
-    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:features/org.jcryptool.thirdparty.jre.win64.feature_1.0.8.1-20220718/jre/bin);
+    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:features/org.jcryptool.thirdparty.jre.win64.feature_*/jre/bin);
 instructions.unconfigure=\
     org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:null);
 
