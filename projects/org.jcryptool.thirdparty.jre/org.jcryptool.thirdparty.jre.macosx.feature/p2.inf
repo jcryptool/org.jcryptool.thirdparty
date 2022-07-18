@@ -1,7 +1,7 @@
 instructions.configure=\
-    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:../Eclipse/features/org.jcryptool.thirdparty.jre.macosx.feature_*/jre/Contents/Home/bin);\
-    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_*/jre/Contents/Home/bin/,targetFile:java,permissions:755);\
-    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_*/jre/Contents/Home/lib/,targetFile:jspawnhelper,permissions:755);\
-    org.eclipse.equinox.p2.touchpoint.natives.ln(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_*/jre/Contents/MacOS/,linkName:libjli.dylib,linkTarget:../Home/lib/libjli.dylib);
+    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:../Eclipse/features/org.jcryptool.thirdparty.jre.macosx.feature_1.0.8.1-20220718/jre/Contents/Home/bin);\
+    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_1.0.8.1-20220718/jre/Contents/Home/bin/,targetFile:java,permissions:755);\
+    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_1.0.8.1-20220718/jre/Contents/Home/lib/,targetFile:jspawnhelper,permissions:755);\
+    org.eclipse.equinox.p2.touchpoint.natives.ln(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.macosx.feature_1.0.8.1-20220718/jre/Contents/MacOS/,linkName:libjli.dylib,linkTarget:../Home/lib/libjli.dylib);
 instructions.unconfigure=\
     org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:null);

@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature id="org.jcryptool.thirdparty.jre.linux64.feature" version="1.0.8.0-20220709">
-      <category name="jct_jre"/>
-   </feature>
-   <feature id="org.jcryptool.thirdparty.jre.macosx.feature" version="1.0.8.0-20220709">
-      <category name="jct_jre"/>
-   </feature>
-   <feature id="org.jcryptool.thirdparty.jre.win64.feature" version="1.0.8.0-20220709">
-      <category name="jct_jre"/>
-   </feature>
-   <category-def name="jct_jre" label="Java Runtime Environment for JCrypTool"/>
+    <feature id="org.jcryptool.thirdparty.jre.linux64.feature" version="1.0.8.1-20220718">
+        <category name="jct_jre"/>
+    </feature>
+    <feature id="org.jcryptool.thirdparty.jre.macosx.feature" version="1.0.8.1-20220718">
+        <category name="jct_jre"/>
+    </feature>
+    <feature id="org.jcryptool.thirdparty.jre.win64.feature" version="1.0.8.1-20220718">
+        <category name="jct_jre"/>
+    </feature>
+    <category-def name="jct_jre" label="Java Runtime Environment for JCrypTool"/>
 </site>

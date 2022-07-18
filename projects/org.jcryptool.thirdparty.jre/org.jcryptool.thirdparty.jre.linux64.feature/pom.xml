@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <version>1.0.8.0-20220709</version>
-	<parent>
-		<groupId>org.jcryptool.thirdparty</groupId>
-		<artifactId>org.jcryptool.thirdparty.root</artifactId>
+<project 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <version>1.0.8.1-20220718</version>
+    <parent>
+        <groupId>org.jcryptool.thirdparty</groupId>
+        <artifactId>org.jcryptool.thirdparty.root</artifactId>
         <relativePath>./../../../</relativePath>
-		<version>0.0.1</version>
-	</parent>
-	<!-- <parent> -->
-	<!-- 	<groupId>org.jcryptool</groupId> -->
-	<!-- 	<artifactId>org.jcryptool.core.parent</artifactId> -->
-	<!-- 	<version>1.0.0</version> -->
-	<!-- </parent> -->
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>org.jcryptool.thirdparty.jre.linux64.feature</artifactId>
-	<packaging>eclipse-feature</packaging>
+        <version>0.0.1</version>
+    </parent>
+    <!-- <parent> -->
+    <!-- 	<groupId>org.jcryptool</groupId> -->
+    <!-- 	<artifactId>org.jcryptool.core.parent</artifactId> -->
+    <!-- 	<version>1.0.0</version> -->
+    <!-- </parent> -->
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>org.jcryptool.thirdparty.jre.linux64.feature</artifactId>
+    <packaging>eclipse-feature</packaging>
 </project>

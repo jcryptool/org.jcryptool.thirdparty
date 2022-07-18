@@ -1,5 +1,5 @@
 instructions.configure=\
-    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:features/org.jcryptool.thirdparty.jre.linux64.feature_*/jre/bin);\
-    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.linux64.feature_*/jre/bin/,targetFile:java,permissions:755);
+    org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:features/org.jcryptool.thirdparty.jre.linux64.feature_1.0.8.1-20220718/jre/bin);\
+    org.eclipse.equinox.p2.touchpoint.natives.chmod(targetDir:${installFolder}/features/org.jcryptool.thirdparty.jre.linux64.feature_1.0.8.1-20220718/jre/bin/,targetFile:java,permissions:755);
 instructions.unconfigure=\
     org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:null);
