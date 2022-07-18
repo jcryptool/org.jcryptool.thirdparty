@@ -1,4 +1,4 @@
-<feature id="org.jcryptool.thirdparty.jre.macosx.feature" label="JRE for OSX 64 bit" version="1.0.8.1-20220718">
+<feature id="org.jcryptool.thirdparty.jre.macosx.feature" label="JRE for OSX 64 bit" version="1.0.8.2-20220719">
     <description> OpenJDK JRE for OS X </description>
     <copyright>
         Copyright and license to this feature: We, JCrypTool as well as its contributors) assume no rights to any of the files offered here. Please refer to the license information that comes packaged with this feature. )
