@@ -15,14 +15,14 @@
 		<global.version>0.0.1</global.version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>eclipse-release</id>
-			<url>${eclipse-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
+	<!-- <repositories> -->
+	<!-- 	<repository> -->
+	<!-- 		<id>eclipse-release</id> -->
+	<!-- 		<url>${eclipse-repo.url}</url> -->
+	<!-- 		<layout>p2</layout> -->
+	<!-- 	</repository> -->
 
-	</repositories>
+	<!-- </repositories> -->
 
 	<build>
 		<plugins>
