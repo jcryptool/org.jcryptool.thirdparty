@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+_declare_dirvar() { local _dir="$(readlink -f "${BASH_SOURCE[0]}")"; _dir="${_dir%/*}"; local varname="${1:-dir}"; local count="${2:-1}"; while [[ "$count" -gt 0 ]]; do _dir="${_dir%/*}"; let count-- || :; done; eval "$varname"'="$_dir"'; }
+_declare_dirvar bindir 0
+_declare_dirvar rootdir 1
+
+cd "$rootdir"
+
+set -eou pipefail
+
+# projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.linux64.feature,\
+# projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.macosx.feature,\
+# projects/org.jcryptool.thirdparty.jre/org.jcryptool.thirdparty.jre.win64.feature,\
+# projects/org.jcryptool.thirdparty.m2bundle.durian-swt,\
+# projects/org.jcryptool.thirdparty.m2bundle.durian-swt-os,\
+
+mvn -pl \
+projects/org.jcryptool.thirdparty.m2bundle.jaxb,\
+releng/org.jcryptool.thirdparty.jre.p2,\
+releng/org.jcryptool.thirdparty.libraries.p2 \
+-am clean package
+
+echo "file://$rootdir/releng/org.jcryptool.thirdparty.jre.p2/target/repository"
+echo "file://$rootdir/releng/org.jcryptool.thirdparty.libraries.p2/target/repository"
