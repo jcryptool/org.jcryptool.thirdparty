@@ -40,6 +40,10 @@
                                     <id>com.google.code.gson:gson:2.8.6</id>
                                     <source>true</source>
                                 </artifact>
+                                <artifact>
+                                    <id>com.google.protobuf:protobuf-java:3.22.0</id>
+                                    <source>true</source>
+                                </artifact>
                                 <!-- </artifact> -->
                             <!-- END: GOOGLE LIBRARIES -->
 
