@@ -29,14 +29,14 @@
                                     <id>org.jcryptool.thirdparty:org.jcryptool.thirdparty.m2bundle.jaxb:${global.version}</id>
                                 </artifact>
 
-                            <artifact>
-                              <id>org.bouncycastle:bcprov-jdk15on:1.68</id>
-                              <source>true</source>
-                            </artifact>
-                            <artifact>
-                              <id>org.bouncycastle:bcpkix-jdk15on:1.68</id>
-                              <source>true</source>
-                            </artifact>
+                                <artifact>
+                                  <id>org.bouncycastle:bcprov-jdk15on:1.68</id>
+                                  <source>true</source>
+                                </artifact>
+                                <artifact>
+                                  <id>org.bouncycastle:bcpkix-jdk15on:1.68</id>
+                                  <source>true</source>
+                                </artifact>
 
                             <!-- BEGIN: my new custom libraries -->
                                 <artifact>
@@ -44,6 +44,11 @@
                                     <source>true</source>
                                 </artifact>
                             <!-- END:   my new custom libraries -->
+
+                              <artifact>
+                                  <id>com.google.protobuf:protobuf-java:3.22.0</id>
+                                  <source>true</source>
+                              </artifact>
 
                             <!-- BEGIN: GOOGLE LIBRARIES -->
                                 <artifact>
