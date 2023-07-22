@@ -1,4 +1,4 @@
-<feature id="org.jcryptool.thirdparty.jre.linux64.feature" label="JRE for Linux 64 bit" version="1.0.8.26-20230127">
+<feature id="org.jcryptool.thirdparty.jre.linux64.feature" label="JRE for Linux 64 bit" version="1.0.9">
     <description> OpenJDK JRE for Linux x86_64 </description>
     <copyright>
         Copyright and license to this feature: We, JCrypTool as well as its contributors) assume no rights to any of the files offered here. Please refer to the license information that comes packaged with this feature. )
