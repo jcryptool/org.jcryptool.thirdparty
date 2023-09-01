@@ -2,7 +2,7 @@
     <feature id="org.jcryptool.thirdparty.jre.linux64.feature" version="1.0.9">
         <category name="jct_jre"/>
     </feature>
-    <feature id="org.jcryptool.thirdparty.jre.macosx.feature" version="1.0.9">
+    <feature id="org.jcryptool.thirdparty.jre.macosx.feature" version="1.0.9.3-20230901">
         <category name="jct_jre"/>
     </feature>
     <feature id="org.jcryptool.thirdparty.jre.win64.feature" version="1.0.9">
